@@ -1,0 +1,10 @@
+CREATE TABLE admin (
+  id INT NOT NULL AUTO_INCREMENT,
+  full_name VARCHAR(100),
+  email VARCHAR(255) NOT NULL,
+  password VARCHAR(100) NOT NULL,
+  is_active TINYINT DEFAULT 1,
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (id),
+  UNIQUE (email)
+);
