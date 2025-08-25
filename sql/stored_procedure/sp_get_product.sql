@@ -1,0 +1,8 @@
+DELIMITER $$
+
+CREATE PROCEDURE sp_get_product()
+BEGIN
+    SELECT * FROM products;
+END$$
+
+DELIMITER ;
