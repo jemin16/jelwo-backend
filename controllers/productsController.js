@@ -101,3 +101,14 @@ exports.updateProduct = async (req, res) => {
         res.status(500).json({ success: false, message: "Failed to update product" });
     }
 };
+
+exports.deleteProduct = async (req, res) => {
+    try {
+        const { id } = req.params;
+        await db.execute("CALL sp_delete_product(?)", [id]);
+        res.status(200).json({ success: true, message: "Product deleted successfully" });
+    } catch (error) {
+        console.error("Error deleting product:", error);
+        res.status(500).json({ success: false, message: "Failed to delete product" });
+    }
+};
