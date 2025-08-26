@@ -8,15 +8,21 @@ require("dotenv").config();
 app.use(express.json());
 app.use(cors());
 
-const userRoutes = require("./routes/userRoutes");
-const adminRoutes = require("./routes/adminRoutes");
+app.use(express.static("uploads"));
+
 
 const adminController = require("./controllers/adminController");
-
 adminController.defaultAdmin();
+
+const adminRoutes = require("./routes/adminRoutes");
+const userRoutes = require("./routes/userRoutes");
+const categoryRoutes = require("./routes/categoryRoutes");
+const productRoutes = require("./routes/productRoutes");
 
 app.use("/api/users", userRoutes);
 app.use("/api/admin", adminRoutes);
+app.use("/api/category", categoryRoutes);
+app.use("/api/product", productRoutes);
 
 app.get("/", (req, res) => {
     res.send("Hello Jelwo!");
