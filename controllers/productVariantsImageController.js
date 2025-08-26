@@ -63,3 +63,22 @@ exports.getVariantImagesByProductId = async (req, res) => {
         res.status(500).json({ error: "Internal Server Error" });
     }
 };
+
+exports.deleteVariantImages = async (req, res) => {
+    try {
+        const { product_id } = req.params;
+
+        const [result] = await db.query(
+            "DELETE FROM variant_images WHERE product_id = ?",
+            [product_id]
+        );
+
+        res.status(200).json({
+            message: "Product images deleted successfully",
+            product_id
+        });
+    } catch (error) {
+        console.error("Error deleting product images:", error);
+        res.status(500).json({ error: "Internal Server Error" });
+    }
+};
