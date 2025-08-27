@@ -18,11 +18,15 @@ const adminRoutes = require("./routes/adminRoutes");
 const userRoutes = require("./routes/userRoutes");
 const categoryRoutes = require("./routes/categoryRoutes");
 const productRoutes = require("./routes/productRoutes");
+const productVariantsRoutes = require("./routes/productVariantsRoutes");
+const productVariantsImagesRoutes = require("./routes/productVariantsImagesRoutes");
 
 app.use("/api/users", userRoutes);
 app.use("/api/admin", adminRoutes);
 app.use("/api/category", categoryRoutes);
 app.use("/api/product", productRoutes);
+app.use("/api/product-variants", productVariantsRoutes);
+app.use("/api/product-variants-images", productVariantsImagesRoutes);
 
 app.get("/", (req, res) => {
     res.send("Hello Jelwo!");
