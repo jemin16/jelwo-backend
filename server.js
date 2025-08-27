@@ -20,6 +20,8 @@ const categoryRoutes = require("./routes/categoryRoutes");
 const productRoutes = require("./routes/productRoutes");
 const productVariantsRoutes = require("./routes/productVariantsRoutes");
 const productVariantsImagesRoutes = require("./routes/productVariantsImagesRoutes");
+const blogRoutes = require("./routes/blogRoutes");
+const commentRoutes = require("./routes/commentRoutes");
 
 app.use("/api/users", userRoutes);
 app.use("/api/admin", adminRoutes);
@@ -27,6 +29,8 @@ app.use("/api/category", categoryRoutes);
 app.use("/api/product", productRoutes);
 app.use("/api/product-variants", productVariantsRoutes);
 app.use("/api/product-variants-images", productVariantsImagesRoutes);
+app.use("/api/blog", blogRoutes);
+app.use("/api/comment", commentRoutes);
 
 app.get("/", (req, res) => {
     res.send("Hello Jelwo!");
