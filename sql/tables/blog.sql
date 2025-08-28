@@ -1,0 +1,17 @@
+CREATE TABLE blog (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    image VARCHAR(255) NOT NULL,
+    date DATE NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    comment_count INT DEFAULT 0,
+    title VARCHAR(255) NOT NULL,
+    contentOne TEXT NOT NULL,
+    contentTwo TEXT NOT NULL,
+    secondImage VARCHAR(255) NOT NULL,
+    thirdImage VARCHAR(255) NOT NULL,
+    quotes VARCHAR(255) NOT NULL,
+    quotesContent TEXT NOT NULL,
+    tags JSON NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
