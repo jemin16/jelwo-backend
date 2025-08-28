@@ -30,7 +30,7 @@ exports.updateAboutStory = async (req, res) => {
         const { title, description } = req.body;
 
         const image = req.file ? req.file.filename : null;
-        
+
         const updateData = {
             id: id,
             image: image,
@@ -127,12 +127,12 @@ exports.updateAboutTestimonial = async (req, res) => {
         const { id } = req.params;
         const { title = null, description = null, name = null } = req.body;
         const image = req.file ? req.file.filename : null;
-        
+
         await db.execute(
             "CALL sp_update_about_testimonial(?, ?, ?, ?, ?)",
             [id, image, title, description, name].map(param => param === undefined ? null : param)
         );
-        
+
         res.status(200).json({
             success: true,
             message: "About testimonial updated successfully"
@@ -163,7 +163,7 @@ exports.getAboutTestimonial = async (req, res) => {
         });
     }
 };
-    
+
 
 exports.deleteAboutTestimonial = async (req, res) => {
     try {
@@ -206,18 +206,18 @@ exports.addAboutTeamsMember = async (req, res) => {
         });
     }
 };
-    
+
 exports.updateAboutTeamsMember = async (req, res) => {
     try {
         const { id } = req.params;
         const { name, position } = req.body;
         const image = req.file ? req.file.filename : null;
-        
+
         await db.execute(
             "CALL sp_update_about_team_memb(?, ?, ?, ?)",
             [id, image, name, position].map(param => param === undefined ? null : param)
         );
-        
+
         res.status(200).json({
             success: true,
             message: "About teams member updated successfully"
@@ -231,4 +231,38 @@ exports.updateAboutTeamsMember = async (req, res) => {
         });
     }
 };
-        
+
+exports.getAboutTeamsMember = async (req, res) => {
+    try {
+        const [rows] = await db.execute("SELECT * FROM aboutTeamsMember");
+        res.status(200).json({
+            success: true,
+            data: rows
+        });
+    } catch (error) {
+        console.error("Error fetching about teams member:", error);
+        res.status(500).json({
+            success: false,
+            message: "Failed to fetch about teams member",
+            error: error.message
+        });
+    }
+};
+
+exports.deleteAboutTeamsMember = async (req, res) => {
+    try {
+        const { id } = req.params;
+        await db.execute("DELETE FROM aboutTeamsMember WHERE id = ?", [id]);
+        res.status(200).json({
+            success: true,
+            message: "About teams member deleted successfully"
+        });
+    } catch (error) {
+        console.error("Error deleting about teams member:", error);
+        res.status(500).json({
+            success: false,
+            message: "Failed to delete about teams member",
+            error: error.message
+        });
+    }
+};

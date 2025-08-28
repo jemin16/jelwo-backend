@@ -11,7 +11,7 @@ const uploadTeamMemberImage = uploadImage("uploads/about_team_member");
 
 const { addAboutStory, updateAboutStory, getAboutStory, deleteAboutStory } = require("../controllers/aboutUsController");
 const { addAboutTestimonial, updateAboutTestimonial, getAboutTestimonial, deleteAboutTestimonial } = require("../controllers/aboutUsController");
-const { addAboutTeamsMember, updateAboutTeamsMember } = require("../controllers/aboutUsController");
+const { addAboutTeamsMember, updateAboutTeamsMember, getAboutTeamsMember, deleteAboutTeamsMember } = require("../controllers/aboutUsController");
 
 
 router.post("/add", auth("admin"), upload.single("image"), addAboutStory);
@@ -26,5 +26,7 @@ router.delete("/delete_testimonial/:id", auth("admin"), deleteAboutTestimonial);
 
 router.post("/add_team_member", auth("admin"), uploadTeamMemberImage.single("image"), addAboutTeamsMember);
 router.put("/update_team_member/:id", auth("admin"), uploadTeamMemberImage.single("image"), updateAboutTeamsMember);
+router.get("/get_team_member", getAboutTeamsMember);
+router.delete("/delete_team_member/:id", auth("admin"), deleteAboutTeamsMember);
 
 module.exports = router;
