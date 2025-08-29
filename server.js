@@ -24,6 +24,7 @@ const blogRoutes = require("./routes/blogRoutes");
 const commentRoutes = require("./routes/commentRoutes");
 const aboutUsRoutes = require("./routes/aboutusRoutes");
 const aboutUsTwoRoutes = require("./routes/aboutUsTwoRoutes");
+const contactSupportRoutes = require("./routes/contactUsRoutes");
 
 app.use("/api/users", userRoutes);
 app.use("/api/admin", adminRoutes);
@@ -35,6 +36,7 @@ app.use("/api/blog", blogRoutes);
 app.use("/api/comment", commentRoutes);
 app.use("/api/about-us", aboutUsRoutes);
 app.use("/api/about-us-two", aboutUsTwoRoutes);
+app.use("/api/contact-us", contactSupportRoutes);
 
 app.get("/", (req, res) => {
     res.send("Hello Jelwo!");
