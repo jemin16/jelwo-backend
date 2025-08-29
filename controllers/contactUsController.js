@@ -247,3 +247,114 @@ exports.getContactKeepInTouch = (req, res) => {
         });
     }
 };
+
+exports.deleteContactKeepInTouch = (req, res) => {
+    try {
+        const { id } = req.params;
+        db.execute("DELETE FROM contactkeepintouch WHERE id = ?", [id]);
+        res.status(200).json({
+            success: true,
+            message: "Contact keep in touch deleted successfully"
+        });
+    } catch (error) {
+        console.error("Error deleting contact keep in touch:", error);
+        res.status(500).json({
+            success: false,
+            message: "Failed to delete contact keep in touch",
+            error: error.message
+        });
+    }
+};
+
+// Contact Detail
+
+exports.addContactDetail = (req, res) => {
+    try {
+        const { address, phone, email } = req.body;
+
+        const params = [
+            address || null,
+            phone || null,
+            email || null
+        ];
+
+        db.execute("CALL sp_add_contact_detail(?, ?, ?)", params);
+
+        res.status(200).json({
+            success: true,
+            message: "Contact detail added successfully"
+        });
+    } catch (error) {
+        console.error("Error adding contact detail:", error);
+        res.status(500).json({
+            success: false,
+            message: "Failed to add contact detail",
+            error: error.message
+        });
+    }
+};
+
+exports.getContactDetail = (req, res) => {
+    try {
+        db.execute("SELECT * FROM contactUsContactdetail").then(([rows]) => {
+            res.status(200).json({
+                success: true,
+                message: "Contact detail retrieved successfully",
+                data: rows
+            });
+        });
+    } catch (error) {
+        console.error("Error getting contact detail:", error);
+        res.status(500).json({
+            success: false,
+            message: "Failed to get contact detail",
+            error: error.message
+        });
+    }
+};
+
+exports.updateContactDetail = (req, res) => {
+    try {
+        const { id } = req.params;
+        const { address, phone, email } = req.body;
+
+        const params = [
+            id || null,
+            address || null,
+            phone || null,
+            email || null
+        ];
+
+        db.execute("CALL sp_update_contact_detail(?, ?, ?, ?)", params);
+
+        res.status(200).json({
+            success: true,
+            message: "Contact detail updated successfully"
+        });
+    } catch (error) {
+        console.error("Error updating contact detail:", error);
+        res.status(500).json({
+            success: false,
+            message: "Failed to update contact detail",
+            error: error.message
+        });
+    }
+};
+
+exports.deleteContactDetail = (req, res) => {
+    try {
+        const { id } = req.params;
+        db.execute("DELETE FROM contactUsContactdetail WHERE id = ?", [id]);
+        res.status(200).json({
+            success: true,
+            message: "Contact detail deleted successfully"
+        });
+    } catch (error) {
+        console.error("Error deleting contact detail:", error);
+        res.status(500).json({
+            success: false,
+            message: "Failed to delete contact detail",
+            error: error.message
+        });
+    }
+};
