@@ -1,0 +1,9 @@
+CREATE TABLE privacy_policy (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    left_title VARCHAR(255) DEFAULT NULL,
+    left_content JSON,
+    right_title VARCHAR(255) DEFAULT NULL,
+    right_content JSON,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
