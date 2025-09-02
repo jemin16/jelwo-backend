@@ -27,6 +27,8 @@ const aboutUsTwoRoutes = require("./routes/aboutUsTwoRoutes");
 const contactSupportRoutes = require("./routes/contactUsRoutes");
 const faqsRoutes = require("./routes/faqsRoutes");
 const privacyRoutes = require("./routes/privacyPolicyRoutes");
+const refundPolicyRoutes = require("./routes/refundPolicyRoutes");
+const storeLocationRoutes = require("./routes/storeLocationRoutes");
 
 app.use("/api/users", userRoutes);
 app.use("/api/admin", adminRoutes);
@@ -41,6 +43,8 @@ app.use("/api/about-us-two", aboutUsTwoRoutes);
 app.use("/api/contact-us", contactSupportRoutes);
 app.use("/api/faqs", faqsRoutes);
 app.use("/api/privacy-policy", privacyRoutes);
+app.use("/api/refund-policy", refundPolicyRoutes);
+app.use("/api/store-location", storeLocationRoutes);
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
