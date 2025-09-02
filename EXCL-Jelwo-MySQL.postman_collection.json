@@ -1,0 +1,2431 @@
+{
+	"info": {
+		"_postman_id": "58d14d19-e0bb-458c-96e5-d8af3ce5c595",
+		"name": "EXCL-Jelwo-MySQL",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "38286089"
+	},
+	"item": [
+		{
+			"name": "User Signup/in/otp",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"first_name\": \"jemin\",\r\n    \"last_name\": \"dodiya\",\r\n    \"email\": \"jemindodiya61@gmail.com\",\r\n    \"password\": \"123456\",\r\n    \"accepted_terms\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/api/users/register"
+					},
+					"response": []
+				},
+				{
+					"name": "Verify-Otp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"jemindodiya61@gmail.com\",\r\n    \"otp\": 652389\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/api/users/verify"
+					},
+					"response": []
+				},
+				{
+					"name": "Login User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"jemindodiya61@gmail.com\",\r\n    \"password\" : 123456\r\n}   ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/api/users/login"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin Signup/ SIgnin",
+			"item": [
+				{
+					"name": "Admin Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU1ODY3ODE1LCJleHAiOjE3NTU4NzE0MTV9.mrpovWx9HRRPyb6LknNQ6_hVKXO5ONAMMpObwEdWuLM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"full_name\" : \"Jemin dodiya\",\r\n    \"email\": \"jemindodiya@gmail.com\",\r\n    \"password\" : \"123456\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/api/admin/register"
+					},
+					"response": []
+				},
+				{
+					"name": "Admin Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"admin@example.com\",\r\n    \"password\": \"Admin@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/api/admin/login"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Categories",
+			"item": [
+				{
+					"name": "Add_Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2MDk5MjM5LCJleHAiOjE3NTYxMDI4Mzl9.GoxQ9pZg6FKkNDV4At8Zhjibxoe9-FN9sDvXk785YjA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Mangalsutras\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/api/category/add"
+					},
+					"response": []
+				},
+				{
+					"name": "Get_Category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:5000/api/category/get"
+					},
+					"response": []
+				},
+				{
+					"name": "Update_Category",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2MDk5MjM5LCJleHAiOjE3NTYxMDI4Mzl9.GoxQ9pZg6FKkNDV4At8Zhjibxoe9-FN9sDvXk785YjA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Bracelets\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/api/category/update/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete_Category",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2MDk5MjM5LCJleHAiOjE3NTYxMDI4Mzl9.GoxQ9pZg6FKkNDV4At8Zhjibxoe9-FN9sDvXk785YjA",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:5000/api/category/delete/5"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Product",
+					"item": [
+						{
+							"name": "Add_Products",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2MTgzNTUyLCJleHAiOjE3NTYxODcxNTJ9.Z7NEgsDiGHfyremxViDLaMaqZNznQ2k0P-cjNCD6sOw",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Modish bracelet",
+											"type": "text"
+										},
+										{
+											"key": "category_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "17.00",
+											"type": "text"
+										},
+										{
+											"key": "old_price",
+											"value": "39.00",
+											"type": "text"
+										},
+										{
+											"key": "stock",
+											"value": "16",
+											"type": "text"
+										},
+										{
+											"key": "rating",
+											"value": "0",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Care for fiber: 30% more recycled polyester. We label garments manufactured using environmentally friendly technologies and raw materials with the Join Life label.",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "postman-cloud:///1f082384-98db-4ad0-94a1-059161ab9d86"
+										},
+										{
+											"key": "vendor",
+											"value": "Jelwo",
+											"type": "text"
+										},
+										{
+											"key": "type",
+											"value": "Jewelry",
+											"type": "text"
+										},
+										{
+											"key": "sku",
+											"value": "445",
+											"type": "text"
+										},
+										{
+											"key": "barcode",
+											"value": "123456789",
+											"type": "text"
+										},
+										{
+											"key": "weight",
+											"value": "0.2",
+											"type": "text"
+										}
+									]
+								},
+								"url": "http://localhost:5000/api/product/add"
+							},
+							"response": []
+						},
+						{
+							"name": "Get_Products",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:5000/api/product/get"
+							},
+							"response": []
+						},
+						{
+							"name": "Get_Product_by_id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:5000/api/product/get/2"
+							},
+							"response": []
+						},
+						{
+							"name": "Update_product",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2MTgzNTUyLCJleHAiOjE3NTYxODcxNTJ9.Z7NEgsDiGHfyremxViDLaMaqZNznQ2k0P-cjNCD6sOw",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Rose Golds Rings",
+											"type": "text"
+										}
+									]
+								},
+								"url": "http://localhost:5000/api/product/update/1"
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Product",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2MTgzNTUyLCJleHAiOjE3NTYxODcxNTJ9.Z7NEgsDiGHfyremxViDLaMaqZNznQ2k0P-cjNCD6sOw",
+										"type": "text"
+									}
+								],
+								"url": "http://localhost:5000/api/Product/delete/2"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Product_variants",
+					"item": [
+						{
+							"name": "Add_Variants",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2MTg3MDEyLCJleHAiOjE3NTYxOTA2MTJ9.l5R87QHnzb4VachrXJ48vGyHGlH1CJNkz3Hy6lLGfis",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"product_id\": \"3\",\r\n    \"size\": \"7.5\",\r\n    \"color\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:5000/api/product-variants/add"
+							},
+							"response": []
+						},
+						{
+							"name": "Get_Product_Variants_By_id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:5000/api/product-variants/get/3"
+							},
+							"response": []
+						},
+						{
+							"name": "Update_Product_Variants",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2MTg3MDEyLCJleHAiOjE3NTYxOTA2MTJ9.l5R87QHnzb4VachrXJ48vGyHGlH1CJNkz3Hy6lLGfis",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"product_id\": \"3\",\r\n    \"size\": \"7.5\",\r\n    \"color\": \"Silver\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:5000/api/product-variants/update/1"
+							},
+							"response": []
+						},
+						{
+							"name": "Delete_Product_Variants",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2MTkxMTA2LCJleHAiOjE3NTYxOTQ3MDZ9.P56mDTjwjaD1Jn5w6I8DyTwEoS-HVMQLEMeUjWA0KK0",
+										"type": "text"
+									}
+								],
+								"url": "http://localhost:5000/api/product-variants/delete/1"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Product_Variants_images",
+					"item": [
+						{
+							"name": "Add_Images",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2MjA3MTA5LCJleHAiOjE3NTYyMTA3MDl9.gXwLjJUptkyPXENIdbrp5ZOI5-KP56_gJ1odb1HsCi0",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "images",
+											"type": "file",
+											"src": "postman-cloud:///1f0826ea-1b0f-4e30-919b-c26dcc1ec88e"
+										},
+										{
+											"key": "product_id",
+											"value": "3",
+											"type": "text"
+										},
+										{
+											"key": "images",
+											"type": "file",
+											"src": "postman-cloud:///1f0826ea-7cd2-4be0-abb4-8799fd3e0976"
+										},
+										{
+											"key": "images",
+											"type": "file",
+											"src": "postman-cloud:///1f0826eb-be22-49a0-8b46-c6cce583cfe6"
+										}
+									]
+								},
+								"url": "http://localhost:5000/api/product-variants-images/add"
+							},
+							"response": []
+						},
+						{
+							"name": "Get_All_variants_images",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:5000/api/product-variants-images/get/3"
+							},
+							"response": []
+						},
+						{
+							"name": "Delete_Variants_Images",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2MjA5NDA4LCJleHAiOjE3NTYyMTMwMDh9.2qls0NL3ZmtPYOwimCO-UKMauAH0MdaiYssy9jsZt2k",
+										"type": "text"
+									}
+								],
+								"url": "http://localhost:5000/api/product-variants-images/delete/3"
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Blog And BlogComments",
+			"item": [
+				{
+					"name": "Blog",
+					"item": [
+						{
+							"name": "Add_Blog",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2Mjc1NDk0LCJleHAiOjE3NTYyNzkwOTR9.sBAY4LOckdf8r5Ik3GJsb_Gn-y1Oz_SXXObxu1tEeUk",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "image",
+											"type": "file",
+											"src": "postman-cloud:///1f08304c-9b33-4c40-b72e-cef154855ef9"
+										},
+										{
+											"key": "date",
+											"value": "2025-03-10",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "By Andrew johns",
+											"type": "text"
+										},
+										{
+											"key": "comment_count",
+											"value": "0",
+											"type": "text"
+										},
+										{
+											"key": "title",
+											"value": "Jewels as unique as your journey.",
+											"type": "text"
+										},
+										{
+											"key": "contentOne",
+											"value": "As part of our mission create space for women to express their sensuality without shame fear or the patriarchal gaze we’re asking women to invite us into their most intimate space. Fashion you can buy, but style you possess. The key to style is learning who you are, which takes years. There's no how-to road map to style.",
+											"type": "text"
+										},
+										{
+											"key": "contentTwo",
+											"value": "Style is the only thing you can’t buy. It’s not in a shopping bag, a label, or a price tag. It’s something reflected from our soul to the outside world - an emotion. I thank you for the recognition of the brilliance.",
+											"type": "text"
+										},
+										{
+											"key": "secondImage",
+											"type": "file",
+											"src": "postman-cloud:///1f083050-d37c-4800-81f2-7f47bebee6da"
+										},
+										{
+											"key": "thirdImage",
+											"type": "file",
+											"src": "postman-cloud:///1f083051-4723-46f0-b704-049ed428ac22"
+										},
+										{
+											"key": "quotes",
+											"value": "I thank you for the recognition of the brilliance. It’s something reflecte from our soul to the outside world - an emotion.",
+											"type": "text"
+										},
+										{
+											"key": "quotesContent",
+											"value": "Fashion is what you’re offered four times a year by designers. And style is what you choose. I think there is beauty in everything. What ‘normal’ people would perceive as ugly, I can usually see something of beauty in it. Shoes transform your body language and attitude. They lift you physically and emotionally.",
+											"type": "text"
+										},
+										{
+											"key": "tags",
+											"value": "['Accessories', 'Blog','Clothing','Fashion','Handmad']",
+											"type": "text"
+										}
+									]
+								},
+								"url": "http://localhost:5000/api/blog/add"
+							},
+							"response": []
+						},
+						{
+							"name": "Get_All_Blog",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:5000/api/blog/get"
+							},
+							"response": []
+						},
+						{
+							"name": "Get_Blog_by_ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:5000/api/blog/get/1"
+							},
+							"response": []
+						},
+						{
+							"name": "Delete_Perticular_Blog",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2Mjc0NTc0LCJleHAiOjE3NTYyNzgxNzR9.c1Old5myHvXzznndFLBkjKYA64GwAzdpNZaNGYuYZ6Y",
+										"type": "text"
+									}
+								],
+								"url": "http://localhost:5000/api/blog/delete/1"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "BlogComments",
+					"item": [
+						{
+							"name": "Add_Comment",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mywicm9sZSI6InVzZXIiLCJpYXQiOjE3NTYyNzU0NjIsImV4cCI6MTc1NjI3OTA2Mn0.L41oE37vADazrL_tssme0G0uWp48COguoaq2j0OQ6eg",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"blog_id\": \"2\",\r\n    \"user_id\": \"3\",\r\n    \"name\": \"Jemin\",\r\n    \"email\": \"jemindodiya61@gmail.com\",\r\n    \"comment\": \"Nice\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:5000/api/comment/add"
+							},
+							"response": []
+						},
+						{
+							"name": "Get_Comments_through_Blog_id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:5000/api/comment/get/2"
+							},
+							"response": []
+						},
+						{
+							"name": "Delete_Comment",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mywicm9sZSI6InVzZXIiLCJpYXQiOjE3NTYyNzk0MzUsImV4cCI6MTc1NjI4MzAzNX0.y9Qf25tQhhhnNC8snmWhSv7hPZwG2DMB7CTUMRgOxEA",
+										"type": "text"
+									}
+								],
+								"url": "http://localhost:5000/api/comment/delete/1"
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "AboutUsPageOne",
+			"item": [
+				{
+					"name": "AboutStory",
+					"item": [
+						{
+							"name": "Add_About_Story",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2MzU4OTI4LCJleHAiOjE3NTYzNjI1Mjh9.rfWwE088hJRq3e_SasdLByo8bYRbsTzrjDUmI7EcSEQ",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "image",
+											"type": "file",
+											"src": []
+										},
+										{
+											"key": "title",
+											"value": "40 years of experiences",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "The major problem is that we tend to live our life in our head, in our thoughts, cut off from our actual experience.",
+											"type": "text"
+										}
+									]
+								},
+								"url": "http://localhost:5000/api/about-us/add"
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateAboutStory",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2MzU4OTI4LCJleHAiOjE3NTYzNjI1Mjh9.rfWwE088hJRq3e_SasdLByo8bYRbsTzrjDUmI7EcSEQ",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\" : \"29 Awards won\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:5000/api/about-us/update/2"
+							},
+							"response": []
+						},
+						{
+							"name": "GetAboutStory",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:5000/api/about-us/get"
+							},
+							"response": []
+						},
+						{
+							"name": "DeleteAboutStory",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2MzU4OTI4LCJleHAiOjE3NTYzNjI1Mjh9.rfWwE088hJRq3e_SasdLByo8bYRbsTzrjDUmI7EcSEQ",
+										"type": "text"
+									}
+								],
+								"url": "http://localhost:5000/api/about-us/delete/2"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "AboutTestimonial",
+					"item": [
+						{
+							"name": "AddAboutTestimonial",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2MzYyMTkwLCJleHAiOjE3NTYzNjU3OTB9.urrq1w3oJ9f38I49zpWudDUwxEi3U4-dCy0cxz_heOY",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "image",
+											"type": "file",
+											"src": "postman-cloud:///1f083d7d-3cd9-4bc0-b37f-35e740f7fc65"
+										},
+										{
+											"key": "title",
+											"value": "We love our clients",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "It is a long established fact that a reader will be distracted when looking at its layout.",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "Miranda joy",
+											"type": "text"
+										}
+									]
+								},
+								"url": "http://localhost:5000/api/about-us/add_testimonial"
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateAboutTestimonial",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2MzYyMTkwLCJleHAiOjE3NTYzNjU3OTB9.urrq1w3oJ9f38I49zpWudDUwxEi3U4-dCy0cxz_heOY",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "image",
+											"type": "file",
+											"src": "postman-cloud:///1f083d91-744e-4ba0-9e77-c7b8cc214057"
+										}
+									]
+								},
+								"url": "http://localhost:5000/api/about-us/update_testimonial/2"
+							},
+							"response": []
+						},
+						{
+							"name": "GetAboutTestimonial",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:5000/api/about-us/get_testimonial"
+							},
+							"response": []
+						},
+						{
+							"name": "New Request",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2MzY0ODA0LCJleHAiOjE3NTYzNjg0MDR9.f-jnWt9oiBjU5B0eIGMU4cLeqdnH2BQllmDq5G5n3oc",
+										"type": "text"
+									}
+								],
+								"url": "http://localhost:5000/api/about-us/delete_testimonial/2"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "AboutTeamMember",
+					"item": [
+						{
+							"name": "Add_Teams_Member",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2Mzc5Mjk5LCJleHAiOjE3NTYzODI4OTl9.WHAzaf9HoOLrfud_6-vlDXZ28XdmCW-qCS_9cjwSmI8",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "image",
+											"type": "file",
+											"src": "postman-cloud:///1f083ffc-1bb4-44a0-aeb8-de0f611226d2"
+										},
+										{
+											"key": "name",
+											"value": "mory Orlando",
+											"type": "text"
+										},
+										{
+											"key": "position",
+											"value": "Marketing",
+											"type": "text"
+										}
+									]
+								},
+								"url": "http://localhost:5000/api/about-us/add_team_member"
+							},
+							"response": []
+						},
+						{
+							"name": "Update_Teams_Member",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2MzY1NTg4LCJleHAiOjE3NTYzNjkxODh9.7gFdaS5OmylhPFeUv0XwV3ejOAlMxVT8INc96f4jIrY",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Jemin",
+											"type": "text"
+										}
+									]
+								},
+								"url": "http://localhost:5000/api/about-us/update_team_member/1"
+							},
+							"response": []
+						},
+						{
+							"name": "Get_Teams_Member",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:5000/api/about-us/get_team_member"
+							},
+							"response": []
+						},
+						{
+							"name": "Delete_Team_Member",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2Mzc5Mjk5LCJleHAiOjE3NTYzODI4OTl9.WHAzaf9HoOLrfud_6-vlDXZ28XdmCW-qCS_9cjwSmI8",
+										"type": "text"
+									}
+								],
+								"url": "http://localhost:5000/api/about-us/delete_team_member/1"
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "AboutUsPageTwo",
+			"item": [
+				{
+					"name": "Content",
+					"item": [
+						{
+							"name": "Add_Content",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2MzgyMDAzLCJleHAiOjE3NTYzODU2MDN9.OcYeBDCNLyBKDzQUZZ3XRBF535XYzs2G04Dg1DbgUsY",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "image",
+											"type": "file",
+											"src": "postman-cloud:///1f08405d-0b3e-49c0-946b-49300d979493"
+										},
+										{
+											"key": "title",
+											"value": "Our company",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+											"type": "text"
+										}
+									]
+								},
+								"url": "http://localhost:5000/api/about-us-two/add"
+							},
+							"response": []
+						},
+						{
+							"name": "Get_Content",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:5000/api/about-us-two/get"
+							},
+							"response": []
+						},
+						{
+							"name": "Update_Content",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2MzgyMDAzLCJleHAiOjE3NTYzODU2MDN9.OcYeBDCNLyBKDzQUZZ3XRBF535XYzs2G04Dg1DbgUsY",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "Company story",
+											"type": "text"
+										}
+									]
+								},
+								"url": "http://localhost:5000/api/about-us-two/update/2"
+							},
+							"response": []
+						},
+						{
+							"name": "Delete_Content",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2MzgyMDAzLCJleHAiOjE3NTYzODU2MDN9.OcYeBDCNLyBKDzQUZZ3XRBF535XYzs2G04Dg1DbgUsY",
+										"type": "text"
+									}
+								],
+								"url": "http://localhost:5000/api/about-us-two/delete/2"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Key_Points",
+					"item": [
+						{
+							"name": "Add_Key_Point",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2Mzg1NjIxLCJleHAiOjE3NTYzODkyMjF9.djDu-VMlTsSU81PW_f-7uqhluQQ8VjO14mILOPkSrR0",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "Our vision",
+											"type": "text"
+										},
+										{
+											"key": "Description",
+											"value": "Create the highest vision possible for your life, because you become what you believe.",
+											"type": "text"
+										}
+									]
+								},
+								"url": "http://localhost:5000/api/about-us-two/add_key_point"
+							},
+							"response": []
+						},
+						{
+							"name": "Update_Key_Point",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2Mzg1NjIxLCJleHAiOjE3NTYzODkyMjF9.djDu-VMlTsSU81PW_f-7uqhluQQ8VjO14mILOPkSrR0",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\" : \"Choose products\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:5000/api/about-us-two/update/1"
+							},
+							"response": []
+						},
+						{
+							"name": "Delete_Key_Point",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2Mzg1NjIxLCJleHAiOjE3NTYzODkyMjF9.djDu-VMlTsSU81PW_f-7uqhluQQ8VjO14mILOPkSrR0",
+										"type": "text"
+									}
+								],
+								"url": "http://localhost:5000/api/about-us-two/delete_key_point/2"
+							},
+							"response": []
+						},
+						{
+							"name": "Get_Key_Point",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:5000/api/about-us-two/get"
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "ContactUsPages",
+			"item": [
+				{
+					"name": "FirstContactUsPage",
+					"item": [
+						{
+							"name": "ContactQuickSupport",
+							"item": [
+								{
+									"name": "AddQuickSupport",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2NDY3NzczLCJleHAiOjE3NTY0NzEzNzN9.x-jqVsE1C2bAjR2M4V3ATfNmKgNT0pvJfXKP6iUqcYw",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "title",
+													"value": "Contact mail",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": "demo@support.com",
+													"type": "text"
+												}
+											]
+										},
+										"url": "http://localhost:5000/api/contact-us/add"
+									},
+									"response": []
+								},
+								{
+									"name": "GetContactSupportData",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": "http://localhost:5000/api/contact-us/get"
+									},
+									"response": []
+								},
+								{
+									"name": "UpdateQuickSupport",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2NDQ4NDE1LCJleHAiOjE3NTY0NTIwMTV9.wcVzl4GX8nDIS_E-eMvoUnbUNBrgIZNU3br_vF5IcUM",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"title\": \"Support\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "http://localhost:5000/api/contact-us/update/2"
+									},
+									"response": []
+								},
+								{
+									"name": "DeleteQuickSupport",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2NDQ0MDM1LCJleHAiOjE3NTY0NDc2MzV9.nfykrevyVIJ8qJJKH8SEL1howrPeZDL7HnlZgFSNDLQ",
+												"type": "text"
+											}
+										],
+										"url": "http://localhost:5000/api/contact-us/delete/2"
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "ContactGetInTouch",
+							"item": [
+								{
+									"name": "AddGetInTouch",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2NDQ4NDE1LCJleHAiOjE3NTY0NTIwMTV9.wcVzl4GX8nDIS_E-eMvoUnbUNBrgIZNU3br_vF5IcUM",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "flag",
+													"type": "file",
+													"src": "postman-cloud:///1f084a24-199c-4410-af94-da59bad00b16"
+												},
+												{
+													"key": "address",
+													"value": "425 Broadway, 20th floor pharchard view, London",
+													"type": "text"
+												},
+												{
+													"key": "phone",
+													"value": "+91 123 456 7890",
+													"type": "text"
+												},
+												{
+													"key": "email",
+													"value": "support@store.com",
+													"type": "text"
+												},
+												{
+													"key": "country",
+													"value": "London",
+													"type": "text"
+												}
+											]
+										},
+										"url": "http://localhost:5000/api/contact-us/add_getintouch"
+									},
+									"response": []
+								},
+								{
+									"name": "GetGetInTouch",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": "http://localhost:5000/api/contact-us/get_getintouch"
+									},
+									"response": []
+								},
+								{
+									"name": "UpdateGetInTouch",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2NDQ4NDE1LCJleHAiOjE3NTY0NTIwMTV9.wcVzl4GX8nDIS_E-eMvoUnbUNBrgIZNU3br_vF5IcUM",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"country\" : \"France\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "http://localhost:5000/api/contact-us/update_getintouch/1"
+									},
+									"response": []
+								},
+								{
+									"name": "DeleteGetInTouch",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2NDQ4NDE1LCJleHAiOjE3NTY0NTIwMTV9.wcVzl4GX8nDIS_E-eMvoUnbUNBrgIZNU3br_vF5IcUM",
+												"type": "text"
+											}
+										],
+										"url": "http://localhost:5000/api/contact-us/delete_getintouch/4"
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "ContactKeepInTouch",
+							"item": [
+								{
+									"name": "AddKeepInTouch",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"fullname\": \"Jemin Dodiya\",\r\n    \"email\": \"jemindodiya61@gmail.com\",\r\n    \"phone\": \"8000832578\",\r\n    \"message\": \"Demo message!!\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "http://localhost:5000/api/contact-us/add_keepintouch"
+									},
+									"response": []
+								},
+								{
+									"name": "GetKeepInTouch",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2NDUxMTE3LCJleHAiOjE3NTY0NTQ3MTd9.ia1m_4PbDQuOp4G9djKpK1blvLwocHtSHjYiCVpCVx4",
+												"type": "text"
+											}
+										],
+										"url": "http://localhost:5000/api/contact-us/get_keepintouch"
+									},
+									"response": []
+								},
+								{
+									"name": "New Request",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2NDY1NjIwLCJleHAiOjE3NTY0NjkyMjB9.hcZta4gPfUYRSczuVg5aNGiEyUrFVp2TyCDFTMFw7-w",
+												"type": "text"
+											}
+										],
+										"url": "http://localhost:5000/api/contact-us/delete_keepintouch/1"
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "ContactDetails",
+							"item": [
+								{
+									"name": "AddContactDetail",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2NDY3NzczLCJleHAiOjE3NTY0NzEzNzN9.x-jqVsE1C2bAjR2M4V3ATfNmKgNT0pvJfXKP6iUqcYw",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"address\": \"70 Washington square south new york, NY 10012, united states\",\r\n    \"phone\": \"+1 234 567 8910\",\r\n    \"email\": \"info@yourdomain.com\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "http://localhost:5000/api/contact-us/add_detail"
+									},
+									"response": []
+								},
+								{
+									"name": "GetContactDetail",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": "http://localhost:5000/api/contact-us/get_detail"
+									},
+									"response": []
+								},
+								{
+									"name": "UpdateContactDetails",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2NDY3NzczLCJleHAiOjE3NTY0NzEzNzN9.x-jqVsE1C2bAjR2M4V3ATfNmKgNT0pvJfXKP6iUqcYw",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"phome\": \"+91 8000832578\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "http://localhost:5000/api/contact-us/update_detail/1"
+									},
+									"response": []
+								},
+								{
+									"name": "New Request",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2NDY3NzczLCJleHAiOjE3NTY0NzEzNzN9.x-jqVsE1C2bAjR2M4V3ATfNmKgNT0pvJfXKP6iUqcYw",
+												"type": "text"
+											}
+										],
+										"url": "http://localhost:5000/api/contact-us/delete_detail/2"
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Faqs",
+			"item": [
+				{
+					"name": "Faqs_Categories",
+					"item": [
+						{
+							"name": "Add_Faq_categories",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2NzAzNzAxLCJleHAiOjE3NTY3MDczMDF9.1NiAgFOQrwL9fXs4ZMuOKDs32gQQp2cTJBXmyjJAk-k",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"category_name\": \"Payment information\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:5000/api/faqs/add_category"
+							},
+							"response": []
+						},
+						{
+							"name": "Update_Faq_Categories",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2NzAzNzAxLCJleHAiOjE3NTY3MDczMDF9.1NiAgFOQrwL9fXs4ZMuOKDs32gQQp2cTJBXmyjJAk-k",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"category_name\": \"Payment information\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:5000/api/faqs/update_category/3"
+							},
+							"response": []
+						},
+						{
+							"name": "Delete_Faqs_Categories",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2NzAzNzAxLCJleHAiOjE3NTY3MDczMDF9.1NiAgFOQrwL9fXs4ZMuOKDs32gQQp2cTJBXmyjJAk-k",
+										"type": "text"
+									}
+								],
+								"url": "http://localhost:5000/api/faqs/delete_category/4"
+							},
+							"response": []
+						},
+						{
+							"name": "Get_Faqs_Category",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:5000/api/faqs/get_category"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Faqs",
+					"item": [
+						{
+							"name": "Add_Faqs",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2NzA3NDMzLCJleHAiOjE3NTY3MTEwMzN9.wc_pOxMtazlupIHE6dQR9II84k7q-L3YjZs81YsHRjs",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"question\": \"How long will it take to get my package?\",\r\n    \"answer\": \"We do have restock notifications! If a product is coming back in stock, simply click on the size ofthe product you're wanting to be notified of and a button should appear that says once somecome back in stock, it will send you an email to notify you\",\r\n    \"category_id\": \"3\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:5000/api/faqs/add_faqs"
+							},
+							"response": []
+						},
+						{
+							"name": "Update_Faq",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2NzA3NDMzLCJleHAiOjE3NTY3MTEwMzN9.wc_pOxMtazlupIHE6dQR9II84k7q-L3YjZs81YsHRjs",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"question\": \"Branding is simply a more efficient way to sell things?\",\r\n    \"category_id\": \"3\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:5000/api/faqs/update_faqs/9"
+							},
+							"response": []
+						},
+						{
+							"name": "Delete_Faqs",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2NzA3NDMzLCJleHAiOjE3NTY3MTEwMzN9.wc_pOxMtazlupIHE6dQR9II84k7q-L3YjZs81YsHRjs",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": "http://localhost:5000/api/faqs/delete_faqs/9"
+							},
+							"response": []
+						},
+						{
+							"name": "Get_Faqs",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:5000/api/faqs/get_faqs"
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Privacy_Policy",
+			"item": [
+				{
+					"name": "Main_Privacy_Policy",
+					"item": [
+						{
+							"name": "Add_Privacy_Policy",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2NzIzNTQzLCJleHAiOjE3NTY3MjcxNDN9.XlABsYLnCameYK7CFuAqtkUIhkEsYuDqsE8l7tz7PRw",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"left_title\": \"Device information\",\r\n    \"left_content\": [],\r\n    \"right_title\": \"Cookies\",\r\n    \"right_content\": [\r\n        \"The Green to Wear 2.0 standard aims to minimize the environmental impact of textile production. To this end, we have developed Inditex's The List program\",\r\n        \"Cookies Necessary for the Functioning of the Store\",\r\n        \"The Green to Wear 2.0 standard aims to minimize the environmental impact of textile production. \"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:5000/api/privacy-policy/add"
+							},
+							"response": []
+						},
+						{
+							"name": "Update_Privacy_Policy",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2NzE4NzA4LCJleHAiOjE3NTY3MjIzMDh9.WnFPBrapREuDRBJDBt5uBp6Y8uMUMrEu9_UbzW5CmRQ",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"left_content\": \"When you visit the Site, we collect certain information aboutyour device, your interaction with the Site, and informationnecessary to process your purchases. We may also collectadditional information if you for customer support.\",\r\n    \"content_index\": 0\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:5000/api/privacy-policy/update/1"
+							},
+							"response": []
+						},
+						{
+							"name": "Get_Privacy_Policy",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:5000/api/privacy-policy/get"
+							},
+							"response": []
+						},
+						{
+							"name": "Delete_Privacy_Policy",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2NzE4NzA4LCJleHAiOjE3NTY3MjIzMDh9.WnFPBrapREuDRBJDBt5uBp6Y8uMUMrEu9_UbzW5CmRQ",
+										"type": "text"
+									}
+								],
+								"url": "http://localhost:5000/api/privacy-policy/delete/3"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Points_Table",
+					"item": [
+						{
+							"name": "Add_Points",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2NzIxNjkwLCJleHAiOjE3NTY3MjUyOTB9.qzcgoTMS-y6oM7fh1ceOFh86A555nBYVQUjE52EEi-s",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"privacy_policy_id\": \"2\",\r\n    \"left_title\": \"Source of collection:\",\r\n    \"left_content\": \"The Green to Wear 2.0 standard aims to minimize the environmental impact of textile production.\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:5000/api/privacy-policy/add_points"
+							},
+							"response": []
+						},
+						{
+							"name": "Update_points",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2NzIxNjkwLCJleHAiOjE3NTY3MjUyOTB9.qzcgoTMS-y6oM7fh1ceOFh86A555nBYVQUjE52EEi-s",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"left_title\": \"Source of Zamzam\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:5000/api/privacy-policy/update_points/4"
+							},
+							"response": []
+						},
+						{
+							"name": "Delete_Points",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2NzIxNjkwLCJleHAiOjE3NTY3MjUyOTB9.qzcgoTMS-y6oM7fh1ceOFh86A555nBYVQUjE52EEi-s",
+										"type": "text"
+									}
+								],
+								"url": "http://localhost:5000/api/privacy-policy/delete_points/4"
+							},
+							"response": []
+						},
+						{
+							"name": "Get_Points",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:5000/api/privacy-policy/get_points"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Function_Table",
+					"item": [
+						{
+							"name": "Add_Function_Table",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2NzIzNTQzLCJleHAiOjE3NTY3MjcxNDN9.XlABsYLnCameYK7CFuAqtkUIhkEsYuDqsE8l7tz7PRw",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"privacy_policy_id\": \"4\",\r\n    \"right_name\": \"_shopify_u\",\r\n    \"right_function\": \"The Green to Wear 2.0 standard aims\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:5000/api/privacy-policy/add_func_table"
+							},
+							"response": []
+						},
+						{
+							"name": "Update_Function_Table",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2NzIzNTQzLCJleHAiOjE3NTY3MjcxNDN9.XlABsYLnCameYK7CFuAqtkUIhkEsYuDqsE8l7tz7PRw",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"privacy_policy_id\": \"4\",\r\n    \"right_name\": \"_shopify_u\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:5000/api/privacy-policy/update_func_table/6"
+							},
+							"response": []
+						},
+						{
+							"name": "Delete_Function_Table",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2NzIzNTQzLCJleHAiOjE3NTY3MjcxNDN9.XlABsYLnCameYK7CFuAqtkUIhkEsYuDqsE8l7tz7PRw",
+										"type": "text"
+									}
+								],
+								"url": "http://localhost:5000/api/privacy-policy/delete_func_table/6"
+							},
+							"response": []
+						},
+						{
+							"name": "Get_Function_Table",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:5000/api/privacy-policy/get_func_table"
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Refund_Policy",
+			"item": [
+				{
+					"name": "RefundPolicy",
+					"item": [
+						{
+							"name": "Add_Refund_Policy",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2NzI3MjgzLCJleHAiOjE3NTY3MzA4ODN9.gLvMwESWkB1Zzb0cc5Id9yasYrGU1I0B2_pyI9cwX2s",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"left_content\": [\r\n        \"The Green to Wear 2.0 standard aims to minimize the environmental impact of textile production.\",\r\n        \"The Green to Wear 2.0 standard aims to minimize the environmental impact of textile production. To this end, we have developed Inditex's The List program.\"\r\n    ],\r\n    \"right_content\": [\r\n        \"The Green to Wear 2.0 standard aims to minimize the environmental impact of textile production.    \",\r\n        \"The Green to Wear 2.0 standard aims to minimize the environmental impact of textile production. \"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:5000/api/refund-policy/add"
+							},
+							"response": []
+						},
+						{
+							"name": "Update_refund_Policy",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2NzI3MjgzLCJleHAiOjE3NTY3MzA4ODN9.gLvMwESWkB1Zzb0cc5Id9yasYrGU1I0B2_pyI9cwX2s",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"left_title\": \"Damages and issues\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:5000/api/refund-policy/update/2"
+							},
+							"response": []
+						},
+						{
+							"name": "Delete_Refund_Policy",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2NzI3MjgzLCJleHAiOjE3NTY3MzA4ODN9.gLvMwESWkB1Zzb0cc5Id9yasYrGU1I0B2_pyI9cwX2s",
+										"type": "text"
+									}
+								],
+								"url": "http://localhost:5000/api/refund-policy/delete/4"
+							},
+							"response": []
+						},
+						{
+							"name": "Get_Refund_Policy",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:5000/api/refund-policy/get"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Refund_Policy_Points",
+					"item": [
+						{
+							"name": "Add_Refund_Policy_Points",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2NzI5MzE0LCJleHAiOjE3NTY3MzI5MTR9.L5OoiD7dlAaq-HJGe4kZKT7bsGT3-dTO5qA6B8SEZ_A",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"refund_policy_id\": \"1\",\r\n    \"left_title\": \"The Green to Wear 2.0 standard aims to minimize\",\r\n    \"right_title\": \"The Green to Wear 2.0 standard aims to minimize\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:5000/api/refund-policy/add_points"
+							},
+							"response": []
+						},
+						{
+							"name": "Update_Refund_Policy_Points",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2NzI5MzE0LCJleHAiOjE3NTY3MzI5MTR9.L5OoiD7dlAaq-HJGe4kZKT7bsGT3-dTO5qA6B8SEZ_A",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"left_title\": \"The Green to Wear 2.0 standard aims to minimize\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:5000/api/refund-policy/update_points/2"
+							},
+							"response": []
+						},
+						{
+							"name": "Delete_Refund_Policy_Points",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2NzI5MzE0LCJleHAiOjE3NTY3MzI5MTR9.L5OoiD7dlAaq-HJGe4kZKT7bsGT3-dTO5qA6B8SEZ_A",
+										"type": "text"
+									}
+								],
+								"url": "http://localhost:5000/api/refund-policy/delete_points/2"
+							},
+							"response": []
+						},
+						{
+							"name": "Get_Refund_Policy_Points",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:5000/api/refund-policy/get_points"
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Store_Location",
+			"item": [
+				{
+					"name": "Add_Store_Location",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2NzMyMjQ1LCJleHAiOjE3NTY3MzU4NDV9.WRDCx0wdS_8PTpm3_HlrZGQpQLTljUYVg78R9cX-5EY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "postman-cloud:///1f087368-0e23-4ee0-9647-a2f6273da005"
+								},
+								{
+									"key": "shop_name",
+									"value": "Ansolt park",
+									"type": "text"
+								},
+								{
+									"key": "mobile",
+									"value": "+999 3222 000 388",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "store@domain.com",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "27 Eden walk eden centre, Broadway, United States",
+									"type": "text"
+								},
+								{
+									"key": "open_days",
+									"value": "Mon - Fri",
+									"type": "text"
+								},
+								{
+									"key": "open_time",
+									"value": "9:00am",
+									"type": "text"
+								},
+								{
+									"key": "close_time",
+									"value": "6:00pm",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://localhost:5000/api/store-location/add"
+					},
+					"response": []
+				},
+				{
+					"name": "Update_Store_Location",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2NzMyMjQ1LCJleHAiOjE3NTY3MzU4NDV9.WRDCx0wdS_8PTpm3_HlrZGQpQLTljUYVg78R9cX-5EY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"shop_name\": \"Ansolt park\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/api/store-location/update/4"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete_Store_Location",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2NzMyMjQ1LCJleHAiOjE3NTY3MzU4NDV9.WRDCx0wdS_8PTpm3_HlrZGQpQLTljUYVg78R9cX-5EY",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:5000/api/store-location/delete/4"
+					},
+					"response": []
+				},
+				{
+					"name": "Get_Store_Location",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:5000/api/store-location/get"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Shipping and Return Page",
+			"item": [
+				{
+					"name": "Shipping_Return_Main_Table",
+					"item": [
+						{
+							"name": "Add_Shipping_Return",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2Nzg5NjQyLCJleHAiOjE3NTY3OTMyNDJ9.ncDkQpiSlcrcYU6t_QCC2iv8w2y_cDgnFeUPwyjiJ5Q",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"left_title\": \"Exchanges\",\r\n    \"left_content\": \"The Green to Wear 2.0 standard aims to minimize the environmental impact of textile production.\",\r\n    \"right_title\": \"Refunds\",\r\n    \"right_content\": \"The Green to Wear 2.0 standard aims to minimize the environmental impact of textile production.\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:5000/api/shipping-return/add"
+							},
+							"response": []
+						},
+						{
+							"name": "Update_Shipping_Return",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2Nzg5NjQyLCJleHAiOjE3NTY3OTMyNDJ9.ncDkQpiSlcrcYU6t_QCC2iv8w2y_cDgnFeUPwyjiJ5Q",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"left_title\": \"Exchanges\",\r\n    \"right_title\": \"Refunds\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:5000/api/shipping-return/update/3"
+							},
+							"response": []
+						},
+						{
+							"name": "Get_Shipping_Return",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:5000/api/shipping-return/get"
+							},
+							"response": []
+						},
+						{
+							"name": "Delete_Shipping_Return",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2Nzg5NjQyLCJleHAiOjE3NTY3OTMyNDJ9.ncDkQpiSlcrcYU6t_QCC2iv8w2y_cDgnFeUPwyjiJ5Q",
+										"type": "text"
+									}
+								],
+								"url": "http://localhost:5000/api/shipping-return/delete/3"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Shipping_Rerturn_Points",
+					"item": [
+						{
+							"name": "Add_Points",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2NzkyOTg1LCJleHAiOjE3NTY3OTY1ODV9.4GywB6ZNW_WFF8B092cHYypDnOBlgr7dEykm2gJtvy8",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"shipping_return_id\": \"1\",\r\n    \"left_points\": \"If the item wasn’t marked as a gift when purchased:\",\r\n    \"right_points\": \"Depending on where you live:\",\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:5000/api/shipping-return/add_points"
+							},
+							"response": []
+						},
+						{
+							"name": "Update_Points",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2NzkyOTg1LCJleHAiOjE3NTY3OTY1ODV9.4GywB6ZNW_WFF8B092cHYypDnOBlgr7dEykm2gJtvy8",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"shipping_return_id\": \"1\",\r\n    \"left_points\": \"If the item wasn’t marked as a gift when purchased:\",\r\n    \"right_points\": \"Depending on where you live:\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:5000/api/shipping-return/update_points/6"
+							},
+							"response": []
+						},
+						{
+							"name": "Delete_Points",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2NzkyOTg1LCJleHAiOjE3NTY3OTY1ODV9.4GywB6ZNW_WFF8B092cHYypDnOBlgr7dEykm2gJtvy8",
+										"type": "text"
+									}
+								],
+								"url": "http://localhost:5000/api/shipping-return/delete_points/6"
+							},
+							"response": []
+						},
+						{
+							"name": "Get_Points",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:5000/api/shipping-return/get_points"
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Terms And Condition",
+			"item": [
+				{
+					"name": "Terms_Condition_Title",
+					"item": [
+						{
+							"name": "Add_Terms_Condition_Title",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2Nzk3MjExLCJleHAiOjE3NTY4MDA4MTF9.uMQR53lINSzNnt1HBNOeKxXZDy81SAo_9OQirjornrU",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"left_title\": \"OPTIONAL TOOLS\",\r\n    \"right_title\": \"THIRD-PARTY LINKS\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:5000/api/terms-condition/add"
+							},
+							"response": []
+						},
+						{
+							"name": "Update_Terms_Condition",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2Nzk3MjExLCJleHAiOjE3NTY4MDA4MTF9.uMQR53lINSzNnt1HBNOeKxXZDy81SAo_9OQirjornrU",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "    {\r\n        \"left_title\": \"OPTIONAL TOOLS\"\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:5000/api/terms-condition/update/6"
+							},
+							"response": []
+						},
+						{
+							"name": "Delete_Terms_Condition",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2ODAxMTY0LCJleHAiOjE3NTY4MDQ3NjR9.XtecZ0gcHdghnxcdwsOKBi1S0hlnlZvUVjk2xyXQvPQ",
+										"type": "text"
+									}
+								],
+								"url": "http://localhost:5000/api/terms-condition/delete/6"
+							},
+							"response": []
+						},
+						{
+							"name": "Get_Terms_Condition",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:5000/api/terms-condition/get"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Terms_Condition_Content",
+					"item": [
+						{
+							"name": "Add_Content",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2ODAyODQwLCJleHAiOjE3NTY4MDY0NDB9.Fn-qRiM6lf2RMhvMME6F4VKODRZihgNptOoX1GMWFoY",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title_id\": \"\",\r\n    \"left_content\": [\r\n        \"The Green to Wear 2.0 standard aims to minimize the environmental impact of textile production. To this end, we have developed Inditex's The List program.\",\r\n        \"The Green to Wear 2.0 standard aims to minimize the environmental impact of textile production. To this end, we have developed Inditex's The List program.\"\r\n    ],\r\n    \"right_content\": [\r\n        \"he Green to Wear 2.0 standard aims to minimize the environmental impact of textile production. To this end, we have developed Inditex's The List program.\",\r\n        \"The Green to Wear 2.0 standard aims to minimize the environmental impact of textile production. To this end, we have developed Inditex's The List program.\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:5000/api/terms-condition/add_content"
+							},
+							"response": []
+						},
+						{
+							"name": "Update_Content",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2ODAyODQwLCJleHAiOjE3NTY4MDY0NDB9.Fn-qRiM6lf2RMhvMME6F4VKODRZihgNptOoX1GMWFoY",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title_id\": \"5\",\r\n    \"left_content\": [\r\n        \"The Green to Wear 2.0 standard aims to minimize the environmental impact of textile production. To this end, we have developed Inditex's The List program.\",\r\n        \"The Green to Wear 2.0 standard aims to minimize the environmental impact of textile production. To this end, we have developed Inditex's The List program.\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:5000/api/terms-condition/update_content/4"
+							},
+							"response": []
+						},
+						{
+							"name": "Delete_Content",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzU2ODAyODQwLCJleHAiOjE3NTY4MDY0NDB9.Fn-qRiM6lf2RMhvMME6F4VKODRZihgNptOoX1GMWFoY",
+										"type": "text"
+									}
+								],
+								"url": "http://localhost:5000/api/terms-condition/delete_content/5"
+							},
+							"response": []
+						},
+						{
+							"name": "Get_Content",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:5000/api/terms-condition/get_content"
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}

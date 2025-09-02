@@ -29,6 +29,8 @@ const faqsRoutes = require("./routes/faqsRoutes");
 const privacyRoutes = require("./routes/privacyPolicyRoutes");
 const refundPolicyRoutes = require("./routes/refundPolicyRoutes");
 const storeLocationRoutes = require("./routes/storeLocationRoutes");
+const shippingReturnRoutes = require("./routes/shippingReturnRoutes");
+const termsConditionRoutes = require("./routes/termsConditionRoutes");
 
 app.use("/api/users", userRoutes);
 app.use("/api/admin", adminRoutes);
@@ -45,6 +47,8 @@ app.use("/api/faqs", faqsRoutes);
 app.use("/api/privacy-policy", privacyRoutes);
 app.use("/api/refund-policy", refundPolicyRoutes);
 app.use("/api/store-location", storeLocationRoutes);
+app.use("/api/shipping-return", shippingReturnRoutes);
+app.use("/api/terms-condition", termsConditionRoutes);
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
